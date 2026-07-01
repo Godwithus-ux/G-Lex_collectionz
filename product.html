@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G Luxe Collectionz • Buy Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .gold-btn {
+            background: linear-gradient(to right, #facc15, #eab308);
+            color: black;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .gold-btn:hover {
+            background: linear-gradient(to right, #eab308, #ca8a04);
+            transform: translateY(-1px);
+        }
+        .size-btn.active {
+            background-color: #facc15;
+            color: black;
+            border-color: #facc15;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+    <!-- Navbar -->
+    <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-8 py-5 flex items-center justify-between">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-yellow-400 rounded-full flex items-center justify-center">
+                        <span class="text-black font-black text-2xl tracking-tighter">G</span>
+                    </div>
+                    <div>
+                        <span class="text-3xl font-bold tracking-tighter text-yellow-400">G Luxe</span>
+                        <span class="text-3xl font-bold tracking-tighter">Collectionz</span>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
+                    <a href="dev.html" class="hover:text-yellow-400 transition-colors">Home</a>
+                    <a href="dev.html#about" class="hover:text-yellow-400 transition-colors">About</a>
+                    <a href="dev.html#contact" class="hover:text-yellow-400 transition-colors">Contact</a>
+                </div>
+
+                <div class="flex items-center gap-x-4">
+                    <button onclick="showCart()" 
+                            class="flex items-center gap-x-2 px-4 py-2 rounded-full border border-zinc-700 hover:bg-zinc-900 transition-colors">
+                        <i class="fa-solid fa-shopping-bag"></i>
+                        <span class="font-medium">Cart</span>
+                        <span id="cart-count" class="bg-yellow-400 text-black text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Products Section -->
+    <div class="max-w-screen-2xl mx-auto px-6 pt-10 pb-16">
+        <div class="flex items-end justify-between mb-8">
+            <div>
+                <h1 class="text-5xl font-bold tracking-tighter">Signature Collection</h1>
+                <p class="text-zinc-400 mt-2 text-lg">Premium streetwear for the modern elite</p>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Product 1: Signature Luxe Tee -->
+            <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800">
+                <div class="h-80 relative">
+                    <img src= "modalImage.jpg" 
+                         class="w-full h-full object-cover" alt="Signature Luxe Tee">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-semibold text-2xl tracking-tight">Signature Luxe Tee</h3>
+                        <span class="px-4 py-1 text-xs font-bold rounded-full bg-yellow-400 text-black">Best Seller</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm mb-5">Soft premium cotton with a clean, modern fit.</p>
+                    
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-3xl font-bold text-yellow-400">₦25,000</span>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <button onclick="buyProduct(1)" class="flex-1 gold-btn py-3.5 rounded-2xl text-sm">Buy Now</button>
+                        <button onclick="viewProduct(1)" class="flex-1 border border-zinc-700 hover:bg-zinc-800 py-3.5 rounded-2xl text-sm font-medium">View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2: G Luxe Hoodie -->
+            <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800">
+                <div class="h-80 relative">
+                    <img src="Keep your orders moving with SITEWIDE SAVINGS on….jpg" 
+                         class="w-full h-full object-cover" alt="G Luxe Hoodie">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-semibold text-2xl tracking-tight">G Luxe Hoodie</h3>
+                        <span class="px-4 py-1 text-xs font-bold rounded-full bg-emerald-400 text-black">New</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm mb-5">Streetwear comfort with a bold luxury finish.</p>
+                    
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-3xl font-bold text-yellow-400">₦38,000</span>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <button onclick="buyProduct(2)" class="flex-1 gold-btn py-3.5 rounded-2xl text-sm">Buy Now</button>
+                        <button onclick="viewProduct(2)" class="flex-1 border border-zinc-700 hover:bg-zinc-800 py-3.5 rounded-2xl text-sm font-medium">View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3: Designer Denim -->
+            <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800">
+                <div class="h-80 relative">
+                    <img src=sneakers-shelf.jpg
+                         class="w-full h-full object-cover" alt="Designer Denim">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-semibold text-2xl tracking-tight">Designer Denim</h3>
+                        <span class="px-4 py-1 text-xs font-bold rounded-full bg-orange-400 text-black">Limited</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm mb-5">Tailored denim with a sharp fit and premium feel.</p>
+                    
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-3xl font-bold text-yellow-400">₦42,000</span>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <button onclick="buyProduct(3)" class="flex-1 gold-btn py-3.5 rounded-2xl text-sm">Buy Now</button>
+                        <button onclick="viewProduct(3)" class="flex-1 border border-zinc-700 hover:bg-zinc-800 py-3.5 rounded-2xl text-sm font-medium">View</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4: Urban Luxe Jacket -->
+            <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800">
+                <div class="h-80 relative">
+                    <img src="The Ultimate Streetwear Essential_ Nike Grey Tracksuit🩶_.jpg" 
+                         class="w-full h-full object-cover" alt="Urban Luxe Jacket">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-semibold text-2xl tracking-tight">Urban Luxe Jacket</h3>
+                        <span class="px-4 py-1 text-xs font-bold rounded-full bg-violet-400 text-white">Exclusive</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm mb-5">A standout outerwear piece for a premium street look.</p>
+                    
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-3xl font-bold text-yellow-400">₦55,000</span>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <button onclick="buyProduct(4)" class="flex-1 gold-btn py-3.5 rounded-2xl text-sm">Buy Now</button>
+                        <button onclick="viewProduct(4)" class="flex-1 border border-zinc-700 hover:bg-zinc-800 py-3.5 rounded-2xl text-sm font-medium">View</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Buy Modal - IMPROVED VERSION -->
+<div id="buyModal" onclick="if (event.target.id === 'buyModal') closeModal()" 
+     class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[60] flex items-center justify-center p-4">
+    
+    <div onclick="event.stopImmediatePropagation()" 
+         class="bg-zinc-900 w-full max-w-md rounded-3xl overflow-hidden border border-zinc-700 
+                max-h-[90vh] flex flex-col">   <!-- ← This is the key fix -->
+        
+        <!-- Header -->
+        <div class="px-6 pt-6 pb-4 flex items-center justify-between border-b border-zinc-800 flex-shrink-0">
+            <h3 class="text-xl font-semibold">Complete Purchase</h3>
+            <button onclick="closeModal()" class="text-3xl leading-none text-zinc-400 hover:text-white">&times;</button>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div class="p-6 overflow-y-auto flex-1">   <!-- ← Makes it scrollable -->
+            
+            <!-- Product Info -->
+            <div class="flex gap-4 mb-6">
+                <img id="modalImage" class="w-20 h-20 object-cover rounded-2xl border border-zinc-700" alt="">
+                <div class="flex-1">
+                    <h4 id="modalName" class="font-semibold text-xl"></h4>
+                    <p id="modalPrice" class="text-yellow-400 text-2xl font-bold mt-0.5"></p>
+                </div>
+            </div>
+
+            <!-- Size -->
+            <div class="mb-5">
+                <label class="block text-sm font-medium text-zinc-400 mb-2">Size</label>
+                <div id="sizeOptions" class="flex gap-2"></div>
+            </div>
+
+            <!-- Quantity -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-zinc-400 mb-2">Quantity</label>
+                <div class="flex items-center gap-3">
+                    <button onclick="changeQty(-1)" 
+                            class="w-11 h-11 flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 rounded-2xl text-xl font-light border border-zinc-700">-</button>
+                    <input type="number" id="quantity" value="1" min="1" max="10" 
+                           class="w-20 text-center bg-zinc-800 border border-zinc-700 rounded-2xl py-3 text-lg font-medium" 
+                           onchange="updateTotal()">
+                    <button onclick="changeQty(1)" 
+                            class="w-11 h-11 flex items-center justify-center bg-zinc-800 hover:bg-zinc-700 rounded-2xl text-xl font-light border border-zinc-700">+</button>
+                </div>
+            </div>
+
+            <!-- Total -->
+            <div class="bg-zinc-950 rounded-2xl p-4 mb-6 flex justify-between items-center">
+                <span class="text-zinc-400">Total</span>
+                <span id="modalTotal" class="text-3xl font-bold text-yellow-400">₦25,000</span>
+            </div>
+
+            <!-- Form Fields -->
+            <div class="space-y-4">
+                <div>
+                    <label class="text-sm text-zinc-400">Full Name</label>
+                    <input type="text" value="Alex Rivera" 
+                           class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-4 py-3 mt-1">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-sm text-zinc-400">Email</label>
+                        <input type="email" value="alex@luxelife.com" 
+                               class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-4 py-3 mt-1">
+                    </div>
+                    <div>
+                        <label class="text-sm text-zinc-400">Phone</label>
+                        <input type="tel" value="+234 803 123 4567" 
+                               class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-4 py-3 mt-1">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-sm text-zinc-400">Shipping Address</label>
+                    <textarea class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-4 py-3 mt-1" rows="2">15 Adeniran Ogunsanya Street, Surulere, Lagos</textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Buttons (Always Visible) -->
+        <div class="px-6 py-5 bg-zinc-950 border-t border-zinc-800 flex gap-3 flex-shrink-0">
+            <button onclick="closeModal()" 
+                    class="flex-1 py-3.5 rounded-2xl border border-zinc-700 font-medium hover:bg-zinc-900 transition-colors">
+                Cancel
+            </button>
+            <button onclick="completePurchase()" 
+                    class="flex-1 gold-btn py-3.5 rounded-2xl">
+                Complete Purchase
+            </button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        // Product Data - Updated with your new images
+        const products = [
+            {
+                id: 1,
+                name: "Signature Luxe Tee",
+                price: 25000,
+                image: "colorful-tees.jpg"
+            },
+            {
+                id: 2,
+                name: "G Luxe Hoodie",
+                price: 38000,
+                image: "grey-tracksuit.jpg"
+            },
+            {
+                id: 3,
+                name: "Designer Denim",
+                price: 42000,
+                image: "sneakers-shelf.jpg"
+            },
+            {
+                id: 4,
+                name: "Urban Luxe Jacket",
+                price: 55000,
+                image: "blue-tracksuit.jpg"
+            }
+        ];
+
+        let currentProduct = null;
+        let selectedSize = 'M';
+        let cartCount = 0;
+
+        function buyProduct(productId) {
+            currentProduct = products.find(p => p.id === productId);
+            if (!currentProduct) return;
+
+            document.getElementById('modalName').textContent = currentProduct.name;
+            document.getElementById('modalPrice').textContent = '₦' + currentProduct.price.toLocaleString();
+            document.getElementById('modalImage').src = currentProduct.image;
+
+            document.getElementById('quantity').value = 1;
+            createSizeButtons();
+            updateTotal();
+
+            const modal = document.getElementById('buyModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function createSizeButtons() {
+            const container = document.getElementById('sizeOptions');
+            container.innerHTML = '';
+            const sizes = ['S', 'M', 'L', 'XL'];
+            
+            sizes.forEach(size => {
+                const btn = document.createElement('button');
+                btn.textContent = size;
+                btn.className = `size-btn flex-1 py-2.5 text-sm font-medium border border-zinc-700 rounded-2xl hover:border-yellow-400 ${size === selectedSize ? 'active bg-yellow-400 text-black border-yellow-400' : ''}`;
+                
+                btn.onclick = () => {
+                    container.querySelectorAll('button').forEach(b => b.classList.remove('active', 'bg-yellow-400', 'text-black'));
+                    btn.classList.add('active', 'bg-yellow-400', 'text-black');
+                    selectedSize = size;
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        function changeQty(delta) {
+            const qtyInput = document.getElementById('quantity');
+            let qty = parseInt(qtyInput.value) || 1;
+            qty = Math.max(1, Math.min(10, qty + delta));
+            qtyInput.value = qty;
+            updateTotal();
+        }
+
+        function updateTotal() {
+            if (!currentProduct) return;
+            const qty = parseInt(document.getElementById('quantity').value) || 1;
+            const total = currentProduct.price * qty;
+            document.getElementById('modalTotal').textContent = '₦' + total.toLocaleString();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('buyModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        function completePurchase() {
+            if (!currentProduct) return;
+            const qty = parseInt(document.getElementById('quantity').value) || 1;
+            const total = currentProduct.price * qty;
+
+            closeModal();
+            cartCount += qty;
+            document.getElementById('cart-count').textContent = cartCount;
+            showSuccessToast(currentProduct, total, qty);
+        }
+
+        function showSuccessToast(product, total, qty) {
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-6 right-6 bg-zinc-900 border border-green-500 text-white px-6 py-5 rounded-3xl shadow-2xl max-w-sm z-[200] flex gap-4`;
+            
+            toast.innerHTML = `
+                <div class="text-green-400 mt-1">
+                    <i class="fa-solid fa-check-circle text-3xl"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="font-semibold text-lg">Order Placed Successfully!</p>
+                    <p class="text-sm text-zinc-400 mt-0.5">${qty} × ${product.name}</p>
+                    <p class="font-bold text-yellow-400 mt-1">Total: ₦${total.toLocaleString()}</p>
+                    <p class="text-xs text-zinc-500 mt-2">Order #GL-${Date.now().toString().slice(-8)}</p>
+                </div>
+            `;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.transition = 'all 0.4s ease';
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 4500);
+        }
+
+        function viewProduct(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const modalHTML = `
+                <div onclick="this.remove()" class="fixed inset-0 bg-black/70 flex items-center justify-center z-[100] p-4">
+                    <div onclick="event.stopImmediatePropagation()" class="bg-zinc-900 max-w-md w-full rounded-3xl overflow-hidden border border-zinc-700">
+                        <img src="${product.image}" class="w-full h-72 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-2xl font-semibold">${product.name}</h3>
+                                <span class="text-yellow-400 text-2xl font-bold">₦${product.price.toLocaleString()}</span>
+                            </div>
+                            <p class="text-zinc-400 mt-4">Premium quality clothing with excellent craftsmanship.</p>
+                            
+                            <div class="mt-8 flex gap-3">
+                                <button onclick="buyFromView(${product.id}, this)" class="flex-1 gold-btn py-3.5 rounded-2xl">Buy Now</button>
+                                <button onclick="this.closest('.fixed').remove()" class="flex-1 border border-zinc-700 py-3.5 rounded-2xl">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+
+        function buyFromView(productId, element) {
+            element.closest('.fixed').remove();
+            buyProduct(productId);
+        }
+
+        function showCart() {
+            alert("You have " + cartCount + " item(s) in cart.");
+        }
+
+        function init() {
+            document.getElementById('cart-count').textContent = cartCount;
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape") {
+                    const modal = document.getElementById('buyModal');
+                    if (!modal.classList.contains('hidden')) closeModal();
+                }
+            });
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>

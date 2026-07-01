@@ -1,0 +1,395 @@
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0d0d0d;
+    color:white;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    background:rgba(0,0,0,0.5);
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-family:'Cinzel',serif;
+    font-size:2rem;
+    color:#d4af37;
+    font-weight:bold;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    margin-right: 150px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)),
+    url("store-bg.jpg");
+    background-size:cover;
+    background-position:top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-family:'Cinzel',serif;
+    font-size:5rem;
+    color:#d4af37;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    font-size:1.2rem;
+    max-width:650px;
+    margin:auto;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 40px;
+    background:#d4af37;
+    color:black;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+    margin-bottom: 20px;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:white;
+}
+
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-family:'Cinzel',serif;
+    color:#d4af37;
+    margin-bottom:50px;
+    font-size:2.5rem;
+}
+
+.about{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
+
+.collections{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+.shop-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    padding:12px;
+    background:#d4af37;
+    color:black;
+    font-weight:600;
+    border-radius:8px;
+}
+.card{
+    background:#151515;
+    border:1px solid rgba(212,175,55,.3);
+    padding:30px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#d4af37;
+}
+
+.card h3{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.contact{
+    text-align:center;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#080808;
+    color:#aaa;
+}
+
+@media(max-width:768px){
+
+    .hero-content h1{
+        font-size:3rem;
+    }
+
+    nav{
+        display:none;
+    }
+}
+
+
+/* ===== Shared utility styles ===== */
+.page-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.page-spacer {
+    height: 100px;
+}
+
+/* ===== Cloth page ===== */
+.page-hero {
+    min-height: 55vh;
+    background:
+        linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.75)),
+        url("boutique.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 8% 80px;
+}
+
+.page-hero-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.page-hero-content p {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e8e8e8;
+}
+
+.breadcrumb {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    padding: 18px;
+    background: #151515;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 16px;
+}
+
+.filter-bar select,
+.filter-bar input {
+    background: #0f0f0f;
+    color: white;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 12px 14px;
+    border-radius: 10px;
+    outline: none;
+    min-width: 180px;
+}
+
+.filter-bar input::placeholder {
+    color: #888;
+}
+
+.products-section {
+    padding: 90px 8%;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: #151515;
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4af37;
+}
+
+.product-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    font-size: 1.15rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.product-info p {
+    color: #bdbdbd;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.price {
+    color: #d4af37;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(212, 175, 55, 0.12);
+    color: #d4af37;
+    font-size: 0.8rem;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.product-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.product-actions .btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px 16px;
+    margin-bottom: 0;
+}
+
+.secondary-btn {
+    display: inline-block;
+    padding: 12px 16px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.secondary-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: #d4af37;
+}
+
+/* ===== Dev page ===== */
+.dev-page {
+    min-height: 100vh;
+    padding: 140px 8% 80px;
+    text-align: center;
+    background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)),
+        url("boutique.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.dev-box {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(21, 21, 21, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 20px;
+}
+
+.dev-box h1 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    margin-bottom: 15px;
+    font-size: 3rem;
+}
+
+.dev-box p {
+    color: #e6e6e6;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+    .page-hero-content h1,
+    .dev-box h1 {
+        font-size: 2.4rem;
+    }
+
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .product-actions {
+        flex-direction: column;
+    }
+}

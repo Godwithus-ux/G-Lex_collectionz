@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G Luxe Collectionz • Clothing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .hero-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.55)), url('store-bg.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        
+        .clothing-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .clothing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+    
+    <!-- Navbar -->
+    <nav class="bg-black/90 backdrop-blur-md border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-yellow-400 rounded-full flex items-center justify-center">
+                    <span class="text-black font-black text-2xl tracking-tighter">G</span>
+                </div>
+                <div>
+                    <span class="text-3xl font-bold tracking-tighter text-yellow-400">G Luxe</span>
+                    <span class="text-3xl font-bold tracking-tighter">Collectionz</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="product.html" class="hover:text-yellow-400 transition-colors">Shop</a>
+                <a href="#" class="hover:text-yellow-400 transition-colors">Collections</a>
+                <a href="#" class="hover:text-yellow-400 transition-colors">About</a>
+                <a href="#" class="hover:text-yellow-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Background -->
+    <div class="hero-bg h-screen flex items-center justify-center">
+        <div class="text-center px-6 max-w-4xl">
+            <div class="mb-6">
+                <span class="inline-block px-6 py-2 bg-yellow-400 text-black text-sm font-bold tracking-widest rounded-full">IN-STORE EXPERIENCE</span>
+            </div>
+            <h1 class="text-7xl md:text-8xl font-bold tracking-tighter mb-4">Our Clothing<br>Collection</h1>
+            <p class="text-2xl text-zinc-300 max-w-2xl mx-auto">Premium streetwear curated for the modern elite</p>
+            
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#collection" 
+                   class="px-8 py-4 bg-yellow-400 text-black font-semibold rounded-2xl hover:bg-yellow-300 transition-all flex items-center gap-2">
+                    Explore Collection <i class="fa-solid fa-arrow-down"></i>
+                </a>
+                <a href="product.html" 
+                   class="px-8 py-4 border border-white/70 hover:bg-white hover:text-black font-semibold rounded-2xl transition-all">
+                    Shop Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collection Section -->
+    <div id="collection" class="max-w-screen-2xl mx-auto px-8 py-16">
+        <div class="text-center mb-12">
+            <h2 class="section-title">In-Store Clothing Display</h2>
+            <p class="text-zinc-400 mt-3 text-lg">Step inside our store and explore our carefully selected pieces</p>
+        </div>
+
+        <!-- Clothing Images Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Clothing Rack 1 -->
+            <div class="clothing-card bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800">
+                <img src="clothing-rack.jpg" class="w-full h-[420px] object-cover" alt="Clothing Racks - Hoodies & Streetwear">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold">Streetwear Essentials</h3>
+                    <p class="text-zinc-400 mt-2">Hoodies, sweatshirts & premium casual wear</p>
+                </div>
+            </div>
+
+            <!-- Store Interior with Jeans -->
+            <div class="clothing-card bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800">
+                <img src="store-interior.jpg" class="w-full h-[420px] object-cover" alt="Denim & Clothing Section">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold">Denim & Bottoms</h3>
+                    <p class="text-zinc-400 mt-2">Wide selection of premium jeans and trousers</p>
+                </div>
+            </div>
+
+            <!-- Sneakers Display -->
+            <div class="clothing-card bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800">
+                <img src="sneakers-shelf.jpg" class="w-full h-[420px] object-cover" alt="Sneaker Collection">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold">Signature Footwear</h3>
+                    <p class="text-zinc-400 mt-2">Curated sneakers to complete every look</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="bg-zinc-900 py-16">
+        <div class="max-w-screen-2xl mx-auto px-8 text-center">
+            <h2 class="text-4xl font-bold tracking-tight mb-4">Ready to Shop?</h2>
+            <p class="text-zinc-400 mb-8 max-w-md mx-auto">Visit our store or browse our full collection online</p>
+            
+            <div class="flex justify-center gap-4">
+                <a href="product.html" 
+                   class="px-10 py-4 bg-yellow-400 text-black font-bold rounded-2xl hover:bg-yellow-300 transition-all">
+                    Browse All Products
+                </a>
+                <a href="#" 
+                   class="px-10 py-4 border border-zinc-600 hover:bg-zinc-800 font-semibold rounded-2xl transition-all">
+                    Book Store Visit
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-black py-8 border-t border-zinc-800">
+        <div class="max-w-screen-2xl mx-auto px-8 text-center text-zinc-500 text-sm">
+            © 2026 G Luxe Collectionz. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
