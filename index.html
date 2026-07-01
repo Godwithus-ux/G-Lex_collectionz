@@ -6,22 +6,71 @@
 <title>G Luxe Collectionz</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <link rel="stylesheet" href="styles.css">
+
+<style>
+    .mobile-menu-home {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 40;
+        display: none;
+        flex-direction: column;
+        padding-top: 80px;
+    }
+    
+    .mobile-menu-home.active {
+        display: flex;
+    }
+    
+    .mobile-menu-home a {
+        padding: 16px 24px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        font-size: 16px;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+    
+    .mobile-menu-home a:hover {
+        background: rgba(212, 175, 55, 0.1);
+        color: #d4af37;
+    }
+</style>
 </head>
 <body>
+
+<!-- Mobile Menu -->
+<div id="mobileMen" class="mobile-menu-home">
+    <a href="#about">About</a>
+    <a href="#collections">Collections</a>
+    <a href="product.html">Shop</a>
+    <a href="cloth.html">View Products</a>
+    <a href="#contact">Contact</a>
+</div>
 
 <header>
     <div class="logo">G Luxe Collectionz</div>
 
-    <nav>
+    <nav id="navMenu">
         <a href="#about">About</a>
         <a href="#collections">Collections</a>
+        <a href="product.html">Shop</a>
+        <a href="cloth.html">View Products</a>
         <a href="#contact">Contact</a>
-        
-
-        
     </nav>
+
+    <!-- Hamburger Menu -->
+    <button onclick="toggleMobileMenu()" class="hamburger-menu" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 </header>
 
 <section class="hero">
@@ -32,11 +81,7 @@
             and timeless pieces curated for those who value style.
         </p>
         <a href="product.html" class="btn">Shop Collection</a>
-        <a href="cloth.html" class="btn">
-    View Product
-    </a>
-        
-
+        <a href="cloth.html" class="btn">View Product</a>
     </div>
 </section>
 
@@ -59,7 +104,6 @@
         <div class="card">
             <h3>Luxury Apparel</h3>
             <p>Premium shirts, hoodies, and statement pieces.</p>
-            
         </div>
 
         <div class="card">
@@ -89,6 +133,33 @@
 <footer>
     © 2025 G Luxe Collectionz. All Rights Reserved.
 </footer>
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMen');
+        const hamburger = document.getElementById('hamburgerBtn');
+        menu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    }
+
+    // Close mobile menu when clicking a link
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-home a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                toggleMobileMenu();
+            });
+        });
+
+        // Close menu on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                const menu = document.getElementById('mobileMen');
+                if (menu.classList.contains('active')) toggleMobileMenu();
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
