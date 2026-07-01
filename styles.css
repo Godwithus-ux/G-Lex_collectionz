@@ -16,7 +16,7 @@ header{
     position:fixed;
     top:0;
     width:100%;
-    padding:20px 8%;
+    padding:20px 4%;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -27,16 +27,21 @@ header{
 
 .logo{
     font-family:'Cinzel',serif;
-    font-size:2rem;
+    font-size:1.5rem;
     color:#d4af37;
     font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:30px;
 }
 
 nav a{
     text-decoration:none;
     color:white;
-    margin-right: 150px;
     transition:0.3s;
+    font-size:0.95rem;
 }
 
 nav a:hover{
@@ -152,17 +157,64 @@ footer{
     color:#aaa;
 }
 
-@media(max-width:768px){
-
-    .hero-content h1{
-        font-size:3rem;
-    }
-
-    nav{
-        display:none;
-    }
+/* Mobile Menu Styles */
+.mobile-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 40;
+    display: none;
+    flex-direction: column;
+    padding-top: 80px;
 }
 
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu a {
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.mobile-menu a:hover {
+    background: rgba(212, 175, 55, 0.1);
+    color: #d4af37;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+.hamburger-menu span {
+    width: 24px;
+    height: 2px;
+    background: #d4af37;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
 
 /* ===== Shared utility styles ===== */
 .page-header {
@@ -378,10 +430,68 @@ footer{
     margin-bottom: 25px;
 }
 
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets (768px and below) */
 @media (max-width: 768px) {
-    .page-hero-content h1,
-    .dev-box h1 {
+    header {
+        padding: 15px 4%;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        display: none;
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+
+    section {
+        padding: 60px 4%;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .collections {
+        grid-template-columns: 1fr;
+    }
+
+    .page-hero {
+        padding: 80px 4% 50px;
+    }
+
+    .page-hero-content h1 {
         font-size: 2.4rem;
+    }
+
+    .page-hero-content p {
+        font-size: 1rem;
     }
 
     .filter-bar {
@@ -389,7 +499,137 @@ footer{
         align-items: stretch;
     }
 
+    .filter-bar select,
+    .filter-bar input {
+        min-width: 100%;
+    }
+
+    .products-section {
+        padding: 60px 4%;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
     .product-actions {
         flex-direction: column;
+    }
+
+    .dev-page {
+        padding: 100px 4% 60px;
+    }
+
+    .dev-box {
+        padding: 30px;
+    }
+
+    .dev-box h1 {
+        font-size: 2.4rem;
+    }
+}
+
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+    header {
+        padding: 12px 3%;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .hero {
+        padding: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+
+    section {
+        padding: 40px 3%;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .about {
+        font-size: 0.95rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .page-hero {
+        padding: 60px 3% 40px;
+    }
+
+    .page-hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .page-hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .products-section {
+        padding: 40px 3%;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .product-info {
+        padding: 15px;
+    }
+
+    .product-info h3 {
+        font-size: 1rem;
+    }
+
+    .product-info p {
+        font-size: 0.85rem;
+    }
+
+    .dev-page {
+        padding: 80px 3% 40px;
+    }
+
+    .dev-box {
+        padding: 20px;
+    }
+
+    .dev-box h1 {
+        font-size: 1.8rem;
+    }
+
+    .dev-box p {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 0.8rem;
     }
 }
